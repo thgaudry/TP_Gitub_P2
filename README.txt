@@ -20,3 +20,4 @@ Seul main.js est modifié pour ajouter les fonctions javascript utilisées dans 
 Ajout fonctions : 
 1- zWave_AN157_set_all et zWave_AN157_set
 2- zWave_AN157_get et zWay_status
+3- zWay_status_all et updateStatus

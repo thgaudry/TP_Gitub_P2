@@ -68,4 +68,18 @@ function zWay_status (device_id) {
       $("#status").html(updatetime);
     }
   });
-}}
+}
+
+function zWay_status_all () {
+  $(".device_status").each(function (index) {
+    var ds_id = $(this).attr('id').split("_");
+    var d_id  = ds_id[1];
+    zWave_AN157_get (d_id);
+  });
+}
+
+function updateStatus () {
+  zWay_status_all ();
+  status_timeout = setTimeout("updateStatus()", 10000);
+}
+
