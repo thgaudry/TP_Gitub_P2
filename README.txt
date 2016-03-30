@@ -1,4 +1,6 @@
 /*************************************/
+/*   EXERCICE UTILISATION DE GITHUB  */
+/*                                   */
 /*    ALLUMER/ETEINDRE DES LAMPES    */
 /*    AVEC UN RaspberryPI            */
 /*    (repris du blog  MagdiBlog)    */
@@ -13,4 +15,8 @@ conf.php
 style.css
 main.js
 
-Seul main.js est modifié pour ajouter les fonctions javascript utilisées dans  index.php
+Seul main.js est modifié pour ajouter les fonctions javascript utilisées dans  index.php.
+
+Ajout fonctions : 
+1- zWave_AN157_set_all et zWave_AN157_set
+
