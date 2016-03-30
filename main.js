@@ -31,4 +31,41 @@ function zWave_AN157_set (device_id) {
       zWave_AN157_get (device_id);
     }
   });
+
+function zWave_AN157_get (device_id) {
+  $.ajax({
+    async : false,
+    type: "POST",
+    url: "ajax.php",
+    data: "cmd=get&device_id="+device_id,
+    success: function(html){
+      zWay_status (device_id);
+    }
+  });
 }
+
+function zWay_status (device_id) {
+  $.ajax({
+    async : false,
+    dataType: "json",
+    type: "POST",
+    url: "ajax.php",
+    data: "cmd=status",
+    success: function(html){
+      var updatetime = html['updateTime'];
+
+      if(typeof html['devices.'+device_id+'.instances.0.commandClasses.37.data.level'] != 'undefined'){
+        var level      = html['devices.'+device_id+'.instances.0.commandClasses.37.data.level']['value'];
+        if(level == '255'){
+          $("#light_"+device_id).attr('src', 'light_on.png');
+        }
+        else{
+          $("#light_"+device_id).attr('src', 'light_off.png');
+        }
+        $("#status_"+device_id).val(level);
+      }
+
+      $("#status").html(updatetime);
+    }
+  });
+}}
