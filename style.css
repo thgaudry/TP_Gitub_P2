@@ -1,0 +1,36 @@
+body {
+  padding : 20px 5px;
+  font-family : Arial, Helvetica;
+  font-size : 14px;
+  text-align : center;
+  background-color : #000;
+  color : #EEE;
+}
+
+div.dev {
+  border : solid 1px #000;
+  display : inline-block;
+  text-align : center;
+  padding : 5px;
+  margin : 5px;
+}
+
+div.dev:active {
+  border : solid 1px rgba(255,255,255,0.3);
+}
+
+div.dev:hover {
+  cursor : pointer;
+}
+
+img.light {
+  width : 100px;
+  height : 100px;
+  border : 0;
+}
+
+p.device_name {
+  font-weight : bold;
+  text-align : center;
+}
+
